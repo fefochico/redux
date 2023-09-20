@@ -1,0 +1,36 @@
+
+#all{
+    width: 100vw;
+    height: 100vh;
+    background: lightskyblue;
+}
+.background-yellow{
+    background: lightgoldenrodyellow !important; 
+}
+#brand{
+    float:right;
+}
+.body-father, .body-son{
+    width: 100%;
+    padding-top: 40px;
+}
+
+.body-son{
+    background: lightblue;
+}
+
+.body-son-yellow{
+    background: lightyellow  !important; 
+}
+
+#label-counter, #counter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#actions-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
