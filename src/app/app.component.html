@@ -1,21 +1,11 @@
-<div id="all" [ngClass]="{'background-yellow': brand=='amarillo'}">
-  <select id="brand" [ngModel]="brand" (ngModelChange)="onChange($event)">
-    <option value="azul">Azul</option>
-    <option value="amarillo">Amarillo</option>
-  </select>
-  <div class="body-father">
-    <div id="label-counter">Contador desde padre</div>
-    <div id="counter">
-      {{count}}
-    </div>
-    <div id="actions-container">
-      <input type="button" value="Anadir" (click)="add()">
-      <input type="button" value="Quitar" (click)="extract()">
-    </div>
-  </div>
-  <div class="body-son" [ngClass]="{'body-son-yellow': brand=='amarillo'}">
-    <app-son></app-son>
-  </div>
-
-</div>
-  
+<section class="todoapp">
+  <app-todo-page></app-todo-page>
+</section>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <!-- Remove the below line ↓ -->
+  <p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+  <!-- Change this out with your name and url ↓ -->
+  <p>Created by <a href="http://todomvc.com">you</a></p>
+  <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
