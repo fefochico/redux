@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Task } from '../models/task.model';
 import { Store } from '@ngrx/store';
-import { AppState } from '../todo.reducer';
 import { FormControl, Validators } from '@angular/forms';
 import * as actions from '../todo.actions';
+import { AppState } from '../../app.reducer';
 
 @Component({
   selector: 'app-todo-item',

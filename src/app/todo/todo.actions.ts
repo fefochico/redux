@@ -1,5 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 
+export const cleanCompleted = createAction('[ToDo] clean completed');
+
 export const create = createAction('[ToDo] create', 
 props<{text: string}>()
 );

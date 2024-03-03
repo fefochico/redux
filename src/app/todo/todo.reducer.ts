@@ -1,11 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Task } from './models/task.model';
-import { create, edit, newStatus, newStatusAll, remove } from './todo.actions';
-
-
-export interface AppState{
-    todos: Task[];
-}
+import { cleanCompleted, create, edit, newStatus, newStatusAll, remove } from './todo.actions';
 
 export const initialState: Task[]= [
 ];
@@ -48,4 +43,5 @@ export const todoReducer = createReducer(
         }
     })
   }),
+  on(cleanCompleted, (state) => state.filter(value=> !value.completed)),
 );

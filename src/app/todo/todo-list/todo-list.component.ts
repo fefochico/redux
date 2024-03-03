@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Task } from '../models/task.model';
 import { Store } from '@ngrx/store';
-import { AppState } from '../todo.reducer';
+import { AppState } from '../../app.reducer';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,9 +11,13 @@ import { AppState } from '../todo.reducer';
 })
 export class TodoListComponent{
   public list: Task[]=[];
+  public filtroActual!: string;
 
   constructor(private store: Store<AppState>){
-    this.store.select('todos')
-    .subscribe( result => this.list = result);
+    this.store
+    .subscribe( ({todos, filtro}) => {
+      this.list = todos;
+      this.filtroActual = filtro;
+    });
   }
 }

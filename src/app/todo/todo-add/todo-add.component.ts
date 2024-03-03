@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AppState } from '../todo.reducer';
 import { Store } from '@ngrx/store';
 import { FormControl, Validators } from '@angular/forms';
 import * as actions from '../todo.actions';
+import { AppState } from '../../app.reducer';
 
 @Component({
   selector: 'app-todo-add',

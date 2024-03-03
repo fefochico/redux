@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
-import { todoReducer } from './todo.reducer';
 
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
@@ -11,15 +10,17 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
 import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { appReducers } from '../app.reducer';
+import { FilterPipe } from './todo-list/filtro.pipe';
 
 
 @NgModule({
-  declarations: [TodoPageComponent, TodoFooterComponent, TodoListComponent, TodoItemComponent, TodoAddComponent],
-  exports:[TodoPageComponent, TodoFooterComponent, TodoListComponent, TodoItemComponent, TodoAddComponent],
+  declarations: [TodoPageComponent, TodoFooterComponent, TodoListComponent, TodoItemComponent, TodoAddComponent, FilterPipe],
+  exports:[TodoPageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos: todoReducer }),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
